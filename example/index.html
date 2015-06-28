@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Gallery</title>
+    <script src="../build/react.js"></script>
+    <script src="../build/JSXTransformer.js"></script>
+    <style>
+      .thumb {
+        width: 50px;
+        height: 50px;
+        display: inline-block;
+        margin-right: 10px;
+      }
+
+      .thumb:hover{
+        opacity: 0.6;
+      }
+
+      .thumb.active {
+        border: 2px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content"></div>
+    <script type="text/jsx" src="../src/gallery.jsx"></script>
+    <script type="text/jsx">
+      var images = [
+        {
+          full: 'http://placehold.it/400x400',
+          thumb: 'http://placehold.it/50x50',
+          alt: 'some a',
+          active: true
+        },
+        {
+          full: 'http://placehold.it/400x400/BD0080/FFFFFFF',
+          thumb: 'http://placehold.it/50x50/BD0080/FFFFFFF',
+          alt: 'some b'
+        },
+        {
+          full: 'http://placehold.it/400x400/CC0080/FFFFFFF',
+          thumb: 'http://placehold.it/50x50/CC0080/FFFFFFF',
+          alt: 'some c'
+        },
+        {
+          full: 'http://placehold.it/400x400/FF0080/FFFFFFF',
+          thumb: 'http://placehold.it/50x50/FF0080/FFFFFFF'
+        }
+      ];
+      React.render(
+              <Gallery images={images}/>,
+              document.getElementById('content')
+      );
+    </script>
+  </body>
+</html>
